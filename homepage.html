@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pokémon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="pokemon" alt="Pokémon logo">
+            <img src="header.jpg" alt="">
+            <div class="searchContainer">
+                <div class="searchBox">
+                    <form action="search">
+                        <input 
+                            type="text"
+                            id="searchInput"
+                            placeholder="Type a Pokémon name..."
+                        >
+                        <button id="searchBtn" type="submit">
+                            <img src="searchIcon.jpeg" alt="Search">
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="grid" id="pokemonGrid">
+                <!-- Insert Pokémon cards using JavaScript -->
+                <div class="emptyState">
+                    <p>Loading...</p>
+                    <p>Fetching Pokémon data...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <template id="pokemonCardTemplate">
+        <article class="pokemon" data-pokemon-id="">
+            <div class="spriteContainer">
+                <img src="" alt="" loading="lazy">
+            </div>
+            <h2 class="pokemonName"></h2>
+
+            <div>
+                <div class="pokemonType">
+                    <!-- Type badges inserted here -->
+                </div>
+            </div>
+
+            <div class="abilities">
+                <div class="abilitiesLabel">Abilities</div>
+                <div class="pokemonAbilities">
+                    <!-- Ability badges inserted here -->
+                </div>
+            </div>
+        </article>
+    </template>
+    
+    <script src="script.js"></script>
+</body>
+</html>
