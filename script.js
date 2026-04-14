@@ -92,4 +92,3 @@ document.getElementById("searchInput").addEventListener("keydown", function(e) {
         searchPokemon(e);
     }
 });
-
