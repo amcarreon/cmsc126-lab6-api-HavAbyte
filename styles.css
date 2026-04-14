@@ -128,122 +128,145 @@ header > img[alt="Pokémon logo"] {
 .pokemonName{
     text-transform: capitalize;
     text-align: center;
-    font-style: italic;
     font-size: 1.2em;
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
 .pokemonType {
-    font-size: 0.9em;
+    font-size: 9px;
     text-transform: capitalize;
     color: white; /*#c2df05;*/
     font-weight: bold;
-    
-    display: inline-block; 
-    padding: 2.5px 5px;   
+    display: flex; 
+    gap: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+      
     border-radius: 10px;
     margin-bottom: 5px;
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
 /* The 18 Elemental Types in the Pokémon Games */
 .normal  {
+    padding: 2.5px 5px; 
     background: #A8A77A; 
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
     
 }
 .fire    { 
+    padding: 2.5px 5px; 
     background: #EE8130; 
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
 }
 .water   { 
+    padding: 2.5px 5px; 
     background: #6390F0; 
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
 }
 .electric{ 
+    padding: 2.5px 5px; 
     background: #F7D02C; 
     color: black;
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
 
 }
 .grass   { 
+    padding: 2.5px 5px; 
     background: #7AC74C;
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
 
 }
+
 .ice     { 
+    padding: 2.5px 5px;
     background: #96D9D6; 
     color: black;
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
 }
 .fighting{ 
+    padding: 2.5px 5px; 
     background: #C22E28; 
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
 }
 .poison  { 
+    padding: 2.5px 5px; 
     background: #A33EA1;
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
 }
 .ground  { 
+    padding: 2.5px 5px; 
     background: #E2BF65; 
     color: black; 
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
 }
 .flying  { 
+    padding: 2.5px 5px; 
     background: #A98FF3;
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
 }
 .psychic { 
+    padding: 2.5px 5px; 
     background: #F95587;
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
 }
 .bug     { 
+    padding: 2.5px 5px; 
     background: #A6B91A;
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
 
 }
 .rock    { 
+    padding: 2.5px 5px; 
     background: #B6A136; 
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
 
 }
 .ghost   { 
+    padding: 2.5px 5px; 
     background: #735797; 
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
 
 }
 .dragon  { 
+    padding: 2.5px 5px; 
     background: #6F35FC; 
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
 
 }
 .dark    { 
+    padding: 2.5px 5px; 
     background: #705746; 
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
 
 }
 .steel   { 
+    padding: 2.5px 5px; 
     background: #B7B7CE; 
     color: black; 
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
 
 }
 .fairy   { 
+    padding: 2.5px 5px; 
     background: #D685AD; 
-    border-radius: 2px;
+    border-radius: 5px;
     text-transform: uppercase;
 
 }
@@ -258,29 +281,35 @@ header > img[alt="Pokémon logo"] {
     font-size: 0.8em;
     color: black;
     font-weight: bold;        
-    background-color: #e0e0e0;
-    border: 1px solid #0000004d; 
     padding: 10px;
     border-radius: 13.5px;
+    text-transform: capitalize;
+    
 }
 
 .abilitiesLabel {
-    color: #ffffff;
+    color: #2A61F9;
     font-weight: bold;
     font-family: 'Helvetica', Arial, sans-serif; 
-    background-color: #2A61F9;
-    padding: 5px 5px;          
+    background-color:rgb(246, 232, 140);
+    margin: 10px 10px;
+    padding: 1px 80px;
     border-radius: 5px;
-    display: inline-block; 
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+    border-width: 1px;
+    border-style: solid;
+    border-color:#b3d49e;
 }
 
 .pokemonAbilities {
-    gap: 5px;
-    background-color: #ffc5ef;
-    padding: 5px 5px;         
-    margin-top: 5px;
-    border-radius: 15px;
+    display: flex;
+    gap: 10px;
+    background-color: #e452bb;
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;    
+    padding: 1px 5px;
+    margin: 10px 10px;
+    border-radius: 5px;
+    color: white;
     text-transform: capitalize;
-    font-style: italic;
-    display: inline-block; 
+    
 }
