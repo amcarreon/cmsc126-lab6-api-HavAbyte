@@ -11,6 +11,36 @@ async function getPokemon(pokemon) {
     return res.json();
 }
 
+async function searchPokemon() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+
+    if(!input){
+        alert("Enter a valid Gen 1 Pokemon name");
+        return;
+    }
+
+    try {
+        const source = await getPokemon(input);
+        const pokemon = await source.json();
+       
+        clearCont();
+        makeCard(pokemon);
+
+    }
+    
+    catch (error) {
+        alert("Pokemon not found.");
+    }
+
+}
+
+document.getElementById("searchInput").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        
+        searchPokemon();
+    }
+});
+
 function makeCard(pokemon){
     const clone = template.content.cloneNode(true);
 
@@ -18,18 +48,31 @@ function makeCard(pokemon){
     const img = clone.querySelector("img");
     const name = clone.querySelector(".pokemonName");
     const typeContainer = clone.querySelector(".pokemonType");
-    const abilitiesContainer = clone.querySelector(".pokemonAbilities");
+    const abilitiesContainer = clone.querySelector(" .pokemonAbilities");
 
+    typeContainer.innerHTML = ''; // clear old types
+    
     article.dataset.pokemonId = pokemon.id;
     img.src = pokemon.sprites.front_default;
     name.textContent = `${pokemon.name.toUpperCase()}`;
     
     pokemon.types.forEach(t => {
+        const typeWrapper = document.createElement("div"); // container per type
+        typeWrapper.classList.add("typeWrapper");
+
         const span = document.createElement("span");
-        span.textContent = t.type.name;
+        const typeName = t.type.name;
+
+        span.textContent = typeName;
         span.classList.add("type");
-        typeContainer.appendChild(span);
-    });
+        span.classList.add(typeName); 
+
+        typeWrapper.appendChild(span);
+        typeContainer.appendChild(typeWrapper);
+});
+
+
+
 
     pokemon.abilities.forEach(a => {
         const span = document.createElement("span");
@@ -63,29 +106,3 @@ async function loadPokemon() {
 }
 
 window.addEventListener("DOMContentLoaded", loadPokemon);
-
-async function searchPokemon() {
-    const input = document.getElementById("searchInput").value.trim().toLowerCase();
-
-    if(!input){
-        alert("Enter a valid Gen 1 Pokemon name.");
-        return;
-    }
-
-    try {
-        const pokemon = await getPokemon(input);
-       
-        clearCont();
-        makeCard(pokemon);
-    }
-    
-    catch (error) {
-        alert("Pokemon not found.");
-    }
-
-}
-
-document.getElementById("searchForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    searchPokemon();
-});
