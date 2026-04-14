@@ -1,0 +1,315 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+header > img[alt="Header image"] { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1;      
+    
+}
+header {
+    position: relative; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    height: 200px;     
+    overflow: hidden;  
+    padding: 0 40px;  
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1));
+    
+}
+@media (max-width: 600px) {
+    header {
+        height: 120px;
+        flex-direction: column; 
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+header > img[alt="Pokémon logo"] {
+    height: 300px;             
+    width: auto;
+    z-index: 1;             
+}
+
+.searchContainer {
+    z-index: 1;              
+}
+
+.searchBox form {
+    display: flex;
+    background: white;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+#searchInput {
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+}
+
+#searchBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#searchBtn img {
+    height: 20px;
+}
+
+.grid {
+    display: grid;
+    /* This creates 4 equal columns */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    padding: 20px;
+    background-color: aliceblue;
+    background-image: url('path/to/background1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.emptyState {
+    text-align: center;
+    font-size: 1.5em;
+    font-style : italic;
+    color: #e10000;
+}
+#pokemonCardTemplate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+}
+.spriteContainer {
+    margin-top: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #b3d49e;
+    width: 120px;
+    height: 120px;
+    background-color: #c2eef9; 
+    
+    border-radius: 15px;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;  
+    margin-right: auto; 
+}
+
+.spriteContainer img {
+    margin-top: 0px;
+    width: 79%; /* Adjust size as needed */
+    height: auto;
+}
+.pokemon{
+    background-color:beige;
+    text-align: center;
+    border-width: 2px;
+    border-style: solid;
+    border-color:#b3d49e;
+    border-radius: 15px;
+   
+}
+.pokemonName{
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+}
+.pokemonType {
+    font-size: 9px;
+    text-transform: capitalize;
+    color: white; /*#c2df05;*/
+    font-weight: bold;
+    display: flex; 
+    gap: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+      
+    border-radius: 10px;
+    margin-bottom: 5px;
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+}
+/* The 18 Elemental Types in the Pokémon Games */
+.normal  {
+    padding: 2.5px 5px; 
+    background: #A8A77A; 
+    border-radius: 5px;
+    text-transform: uppercase;
+    
+}
+.fire    { 
+    padding: 2.5px 5px; 
+    background: #EE8130; 
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+.water   { 
+    padding: 2.5px 5px; 
+    background: #6390F0; 
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+.electric{ 
+    padding: 2.5px 5px; 
+    background: #F7D02C; 
+    color: black;
+    border-radius: 5px;
+    text-transform: uppercase;
+
+}
+.grass   { 
+    padding: 2.5px 5px; 
+    background: #7AC74C;
+    border-radius: 5px;
+    text-transform: uppercase;
+
+}
+
+.ice     { 
+    padding: 2.5px 5px;
+    background: #96D9D6; 
+    color: black;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+.fighting{ 
+    padding: 2.5px 5px; 
+    background: #C22E28; 
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+.poison  { 
+    padding: 2.5px 5px; 
+    background: #A33EA1;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+.ground  { 
+    padding: 2.5px 5px; 
+    background: #E2BF65; 
+    color: black; 
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+.flying  { 
+    padding: 2.5px 5px; 
+    background: #A98FF3;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+.psychic { 
+    padding: 2.5px 5px; 
+    background: #F95587;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+.bug     { 
+    padding: 2.5px 5px; 
+    background: #A6B91A;
+    border-radius: 5px;
+    text-transform: uppercase;
+
+}
+.rock    { 
+    padding: 2.5px 5px; 
+    background: #B6A136; 
+    border-radius: 5px;
+    text-transform: uppercase;
+
+}
+.ghost   { 
+    padding: 2.5px 5px; 
+    background: #735797; 
+    border-radius: 5px;
+    text-transform: uppercase;
+
+}
+.dragon  { 
+    padding: 2.5px 5px; 
+    background: #6F35FC; 
+    border-radius: 5px;
+    text-transform: uppercase;
+
+}
+.dark    { 
+    padding: 2.5px 5px; 
+    background: #705746; 
+    border-radius: 5px;
+    text-transform: uppercase;
+
+}
+.steel   { 
+    padding: 2.5px 5px; 
+    background: #B7B7CE; 
+    color: black; 
+    border-radius: 5px;
+    text-transform: uppercase;
+
+}
+.fairy   { 
+    padding: 2.5px 5px; 
+    background: #D685AD; 
+    border-radius: 5px;
+    text-transform: uppercase;
+
+}
+
+
+
+.abilities {
+    display: flex;
+    flex-direction: column;
+    align-items: center;     
+    text-align: center;
+    font-size: 0.8em;
+    color: black;
+    font-weight: bold;        
+    padding: 10px;
+    border-radius: 13.5px;
+    text-transform: capitalize;
+    
+}
+
+.abilitiesLabel {
+    color: #2A61F9;
+    font-weight: bold;
+    font-family: 'Helvetica', Arial, sans-serif; 
+    background-color:rgb(246, 232, 140);
+    margin: 10px 10px;
+    padding: 1px 80px;
+    border-radius: 5px;
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+    border-width: 1px;
+    border-style: solid;
+    border-color:#b3d49e;
+}
+
+.pokemonAbilities {
+    display: flex;
+    gap: 10px;
+    background-color: #e452bb;
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;    
+    padding: 1px 5px;
+    margin: 10px 10px;
+    border-radius: 5px;
+    color: white;
+    text-transform: capitalize;
+    
+}
