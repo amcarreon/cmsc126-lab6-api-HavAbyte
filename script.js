@@ -35,7 +35,6 @@ async function searchPokemon() {
 }
 
 document.getElementById("searchInput").addEventListener("keypress", function(e) {
-    event.preventDefault();
     if (e.key === "Enter") {
         
         searchPokemon();
