@@ -1,6 +1,15 @@
-const container = document.body;
-const qtyPokemon = 151; //GEN 1 POKEMONS
+const container = document.getElementById("pokemonGrid");
+const template = document.getElementById("pokemonCardTemplate");
 
+function clearCont() {
+    container.innerHTML = "";
+}
+
+async function getPokemon(pokemon) {
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+    if (!res.ok) throw new Error("Not found");
+    return res.json();
+}
 
 async function searchPokemon() {
     const input = document.getElementById("searchInput").value.toLowerCase();
@@ -11,17 +20,15 @@ async function searchPokemon() {
     }
 
     try {
-        const source = await fetch(`https://pokeapi.co/api/v2/pokemon/${input}`);
-
-        if (!source.ok) {
-            throw new Error("Not found");
-        }
+        const source = await getPokemon(input);
+       
+        clearCont();
+        makeCard(pokemon);
+        displayCard(pokemon);
 
         const pokemon = await source.json();
-
-        showCard(pokemon);
     }
-
+    
     catch (error) {
         alert("Pokemon not found.");
     }
@@ -29,7 +36,7 @@ async function searchPokemon() {
 }
 
 document.getElementById("searchInput").addEventListener("keypress", function(e) {
-    if (e.key == "Enter") {
+    if (e.key === "Enter") {
         searchPokemon();
     }
 });
