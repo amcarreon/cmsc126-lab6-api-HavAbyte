@@ -62,6 +62,8 @@ async function loadPokemon() {
     }
 }
 
+window.addEventListener("DOMContentLoaded", loadPokemon);
+
 async function searchPokemon() {
     const input = document.getElementById("searchInput").value.toLowerCase();
 
@@ -91,5 +93,3 @@ document.getElementById("searchInput").addEventListener("keypress", function(e) 
         searchPokemon();
     }
 });
-
-window.addEventListener("DOMContentLoaded", loadPokemon);
