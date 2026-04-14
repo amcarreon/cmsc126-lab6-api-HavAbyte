@@ -11,36 +11,6 @@ async function getPokemon(pokemon) {
     return res.json();
 }
 
-async function searchPokemon() {
-    const input = document.getElementById("searchInput").value.toLowerCase();
-
-    if(!input){
-        alert("Enter a valid Gen 1 Pokemon name");
-        return;
-    }
-
-    try {
-        const source = await getPokemon(input);
-        const pokemon = await source.json();
-       
-        clearCont();
-        makeCard(pokemon);
-
-    }
-    
-    catch (error) {
-        alert("Pokemon not found.");
-    }
-
-}
-
-document.getElementById("searchInput").addEventListener("keypress", function(e) {
-    if (e.key === "Enter") {
-        
-        searchPokemon();
-    }
-});
-
 function makeCard(pokemon){
     const clone = template.content.cloneNode(true);
 
@@ -93,3 +63,33 @@ async function loadPokemon() {
 }
 
 window.addEventListener("DOMContentLoaded", loadPokemon);
+
+async function searchPokemon() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+
+    if(!input){
+        alert("Enter a valid Gen 1 Pokemon name");
+        return;
+    }
+
+    try {
+        const source = await getPokemon(input);
+       
+        clearCont();
+        makeCard(pokemon);
+        displayCard(pokemon);
+
+        const pokemon = await source.json();
+    }
+    
+    catch (error) {
+        alert("Pokemon not found.");
+    }
+
+}
+
+document.getElementById("searchInput").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        searchPokemon();
+    }
+});
