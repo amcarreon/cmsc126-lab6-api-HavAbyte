@@ -58,14 +58,12 @@ header > img[alt="Pokémon logo"] {
     height: 20px;
 }
 
-.grid {
+.grid { 
     display: grid;
-    /* This creates 4 equal columns */
     grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
     padding: 20px;
     background-color: aliceblue;
-    background-image: url('path/to/background1.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -86,7 +84,7 @@ header > img[alt="Pokémon logo"] {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 
 }
-.spriteContainer {
+.spriteContainer { 
     margin-top: 10px;
     border-width: 2px;
     border-style: solid;
@@ -96,7 +94,7 @@ header > img[alt="Pokémon logo"] {
     background-color: #c2eef9; 
     
     border-radius: 15px;
-   display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     margin-left: auto;  
@@ -105,7 +103,7 @@ header > img[alt="Pokémon logo"] {
 
 .spriteContainer img {
     margin-top: 0px;
-    width: 79%; /* Adjust size as needed */
+    width: 79%; 
     height: auto;
 }
 .pokemon{
@@ -126,7 +124,7 @@ header > img[alt="Pokémon logo"] {
 .pokemonType {
     font-size: 9px;
     text-transform: capitalize;
-    color: white; /*#c2df05;*/
+    color: white;
     font-weight: bold;
     display: flex; 
     gap: 10px;
@@ -305,12 +303,63 @@ header > img[alt="Pokémon logo"] {
     text-transform: capitalize;
     
 }
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-@media (max-width: 600px) {
-    header {
-        height: 120px;
-        flex-direction: column; 
-        justify-content: center;
-        gap: 10px;
-    }
+body {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 1200px) and (min-width: 10px) { /* for tablet or resizing a laptop screen */
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  header > img[alt="Pokémon logo"] {
+    max-width: 60%;  
+  }
+
+  .abilitiesLabel {
+    padding: 1px 40px;
+  }
+}
+
+@media (max-width: 600px) { /* for phone ito*/
+  .grid {
+    grid-template-columns: 1fr; 
+  }
+
+  header {
+    height: 120px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 20px; 
+  }
+
+  header > img[alt="Pokémon logo"] {
+    max-width: 80%;  
+    height: auto;
+  }
+
+  .searchBox form {
+    flex-direction: column; 
+    align-items: stretch;
+  }
+
+  #searchInput {
+    width: 100%;
+  }
 }
